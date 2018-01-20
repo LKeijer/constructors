@@ -12,9 +12,33 @@ namespace constructors
 {
     public partial class Form1 : Form
     {
+        public string TextBack;
+
         public Form1()
         {
             InitializeComponent();
+        }
+
+        public Form1(string textBack)
+        {
+            this.TextBack = textBack;
+        }
+
+        private void textBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Btn_Click(object sender, EventArgs e)
+        {
+            Text text = new constructors.Text("Hello");
+            text.SendBackMessage();
+             ChangeTextBoxText();
+        }
+
+        private void ChangeTextBoxText()
+        {
+            textBox.Text = TextBack;
         }
     }
 }
